@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  - link = "http://localhost:3000/users/" + _id + "/activate"
+  body
+    h1 Secruity Suite Showcase - Activation
+    p.
+      Welcome the the Security Suite Showcase.
+    p.
+      Please click on the following link:
+    p
+      a(href='#{link}') Activate your demo account
+    p
+    p Or type the following link into your browser:
+    p #{link}

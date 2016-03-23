@@ -1,0 +1,126 @@
+
+<div layout="row" ng-cloak>
+
+	<div flex flex-gt-xs="20" ></div>
+	<div flex flex-gt-xs="60" >
+
+	<md-content>
+
+<!-- The input form
+-->
+	<form name="registrationForm" ng-submit="registerController.executeForm()">
+<!-- 	UID / Email
+ -->	
+ 	<div layout="row">
+		<md-input-container class="md-block" flex-gt-xs="40">
+		<label>User ID</label>
+		<input required name="userID" ng-model="registerController.userid">
+		<div ng-messages="registrationForm.userID.$error">
+			<div ng-message="required">User name or Nich name you like to login with.</div>
+		</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex-gt-sm>
+		<label>Email</label>
+		<input required type="email" name="clientEmail" 
+			ng-model="registerController.eMail" 
+			minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+		<div ng-messages="registrationForm.eMail.$error" role="alert">
+		<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+			Please provide a valid eMail Address.
+		</div>
+		</div>
+		</md-input-container>
+	</div> 
+<!-- 	Name / Lastname
+ -->	
+	<div layout="row">
+		<md-input-container class="md-block" flex-gt-xs="40">
+		<label>Name</label>
+		<input required name="name" ng-model="account.name">
+		<div ng-messages="registrationForm.name.$error">
+			<div ng-message="required">Please provide your given name.</div>
+		</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex-gt-sm>
+		<label>Last Name</label>
+		<input required name="lastName" ng-model="account.lastName">
+		<div ng-messages="registrationForm.lastName.$error">
+			<div ng-message="required">Please provide your last name.</div>
+		</div>
+		</md-input-container>
+	</div>
+<!-- 	Company
+ -->	
+	<div layout="row">
+		<md-input-container class="md-block" flex-gt-xs="100">
+		<label>Commpany</label>
+		<input name="company" ng-model="registerController.company">
+		</md-input-container>
+	</div>      
+
+<!-- 	Address / StreetNo
+ -->	
+	<div layout-gt-sm="row">
+		<md-input-container class="md-block" flex-gt-xs="70">
+		<label>Address</label>
+		<input required name="address" ng-model="registerController.address">
+		<div ng-messages="registrationForm.address.$error">
+			<div ng-message="required">Please provide a Street or Building.</div>
+		</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex-gt-xs>
+		<label>Number</label>
+		<input name="info" ng-model="registerController.info">  
+			<div class="hint" >Please provide a Street number or appartment.</div>
+		</md-input-container>
+	</div>
+<!-- 	Address / StreetNo
+ -->	
+	<div layout-gt-sm="row">
+		<md-input-container class="md-block" flex-gt-xs="70">
+		<label>City</label>
+		<input required name="city" ng-model="registerController.city">
+		<div ng-messages="registrationForm.lastName.$error">
+			<div ng-message="required">Please provide the name of you city.</div>
+		</div>
+		</md-input-container>
+
+		<md-input-container class="md-block" flex-gt-sm>
+		<label>Postal Code</label>
+		<input required type="number" name="zip" ng-model="registerController.zip" minlength="4" maxlength="5">
+		<div ng-messages="registrationForm.zip.$error" role="alert">
+			<div ng-message-exp="['required', 'minlength', 'maxlength']">Please provide a valid postal code.</div>
+		</div>
+		</md-input-container>
+	</div>
+<!-- 	Password / Confirm PWD
+ -->	
+	<div layout-gt-sm="row">
+		<md-input-container class="md-block" flex-gt-xs="70">
+		<label>Password</label>
+		<input required type="password" name="pwd" ng-model="registerController.pwd">
+		<div ng-messages="registrationForm.pwd.$error">
+			<div ng-message="required">Please choose a password.</div>
+		</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex-gt-xs="70">
+		<label>Confirm Password</label>
+		<input required type="password" name="pwd2" ng-model="registerController.confirmPwd">
+		<div ng-messages="registrationForm.confirmPwd.$error">
+			<div ng-message="required">Please confirm your password.</div>
+			<span id="invalid-pwd" ng-bind="registerController.errorMessagePwd" ></span>
+		</div>
+		</md-input-container>
+	</div>
+
+	<div layout-gt-sm="row" layout-align="end center">
+		<md-button type="submit"  class="md-raised md-primary">Submit</md-button>
+		<md-button ui-sref="app.index" class="md-raised md-primary">Cancel</md-button>
+	</div>
+
+	</form>
+
+	</md-content>
+
+	</div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "generator-angular-lazy": {
+    "appName": "ti8mSming",
+    "i18n": true,
+    "bootstrapCss": false,
+    "bootstrapJs": false,
+    "indexRouteName": "index",
+    "locales": [
+      "EN"
+    ],
+    "defaultLocale": "EN",
+    "root": null
+  }
+}
