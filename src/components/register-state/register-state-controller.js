@@ -1,43 +1,60 @@
 class RegisterStateController {
 
+  constructor(accountService, $location) {
+    this.accountService = accountService;
+    this.location = $location;
 
-// constructor(fidoService, $scope, $state) {
- //        this.weakAuthenticated = false;
- //        this.fidoService = fidoService;
- //        this.state = $state;
+    this.eMail = "john.doe@nowhere.net";
+    this.postalCode = 8000;
+  };
 
- //        // Begin strong authentication, when user logs in.
- //        $scope.$on('userLoggedIn', () => {
- //            this.weakAuthenticated = true;
- //            this.authenticateStrong();
- //        });
- //    }
+  dataCheck() {
+    if (this.password !== this.confirmPwd) {
+     this.errorMessagePwd = "Confirmation Password must be identical";
+     return false;
+   }
+   return true;
+ }
 
-	constructor(accountService, $state) {
-		this.accountService = accountService;
+ registerUser() {
+  console.log('RegisterState call registerUser');
+  this.accountService.register(
+    this.userId, this.eMail, this.firstName, this.lastName,
+    this.company, this.address, this.addressExt, this.city,
+    this.postalCode, this.password
+    ).then((registerResponse) => {
+      if (typeof registerResponse.status != 'undefined') {
+        console.log("registration failed " + registerResponse.status);
+        this.errorMessageUid = "User or eMail allready used";
+        this.errorMessageEMail = "Please check if you you aready registered this eMail";
+        return false;
+      } else {
+        console.log("registerUser user registratered");  
+        this.location.path( "/start" )            
+        return true;
+      }
+    });
+  }
 
-		this.eMail = "john.doe@nowhere.net";
-  	};
 
-  	dataCheck() {
-  		if (this.pwd !== this.confirmPwd) {
-  			this.errorMessagePwd = "Confirmation Password must be equal";
-  			return false;
-  		}
-            return true;
-    }
-
-  	executeForm() {
-        if (this.dataCheck() === true) {
-			console.log('RegisterState execute submit');
-        }
-    }
+  executeForm() {
+    console.log('RegisterState execute submit');
+    this.errorMessagePwd = null;
+    this.errorMessageUid = null;
+    this.errorMessageEMail = null;
+    if (this.dataCheck() === true) {
+     if (this.registerUser() === true) {
+        console.log("user registratered");  
+        $location.path( "/start" )            
+     };
+   }
+ }
 
 }
 
 
-
 export default [
-	'$state',
-    RegisterStateController
+'accountService',
+'$location',
+RegisterStateController
 ];

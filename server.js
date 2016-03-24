@@ -24,4 +24,4 @@ app.use('/', serveStatic('.'));
 
 http.createServer(app).listen(3000);
 
-console.log('Server running at https://localhost:3000/');
+console.log('Server running at http://localhost:3000/');

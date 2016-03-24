@@ -8,11 +8,11 @@ module.exports = function () {
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function() {
-        console.log("We are connected to mongodb://localhost/test");
+        console.log("We are connected to " + config.db);
     });
 
     
-    require('../app/models/users.js');
+    require('../app/models/account.js');
 
     return db;
 };

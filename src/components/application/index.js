@@ -14,6 +14,8 @@ import constants from './config/constants.json!';
 import ApplicationController from './application-controller';
 import applicationRoute from './application-route';
 import 'angular-material';
+import commonModule from 'components/common/index';
+
 
 const dependencies = [
     'ui.router',
@@ -23,7 +25,8 @@ const dependencies = [
     ngLazy.name,
     'pascalprecht.translate',
     translationsModule.name,
-    'ngMaterial'
+    'ngMaterial',
+    commonModule.name
 ];
 
 const app = angular

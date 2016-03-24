@@ -12,18 +12,6 @@
     "src": "components/index-state/index"
   },
   {
-    "name": "app.subscribe",
-    "url": "subscribe",
-    "type": "load",
-    "src": "components/subscribe-state/index"
-  },
-  {
-    "name": "app.login",
-    "url": "login",
-    "type": "load",
-    "src": "components/login-state/index"
-  },
-  {
     "name": "app.register",
     "url": "register",
     "type": "load",

@@ -29,6 +29,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.20",
     "json": "github:systemjs/plugin-json@0.1.0",
+    "lodash": "npm:lodash@4.6.1",
     "oclazyload": "github:ocombe/oclazyload@1.0.9",
     "text": "github:systemjs/plugin-text@0.0.2",
     "ui-router-extras": "github:christopherthielen/ui-router-extras@0.0.14",
@@ -158,6 +159,10 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:lodash@4.6.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

@@ -1,0 +1,377 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"m",
+				"model"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"a",
+				"author"
+			],
+			[
+				"t",
+				"title"
+			],
+			[
+				"img",
+				"img_text"
+			],
+			[
+				"h",
+				"h2"
+			],
+			[
+				"ba",
+				"banner-head"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/harry/Develop/github/harry-boe/SmingConnect"
+	],
+	"file_history":
+	[
+		"/Users/harry/Downloads/showcase/src/components/fido-login-state/fido-login-route.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/index-state/index.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/icons/ic_menu_white_24px.svg",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/application-controller.js",
+		"/Users/harry/Downloads/showcase/src/components/secure-mobile-activation/secure-mobile-activation-wizard-directive/secure-mobile-activation-wizard-directive.html",
+		"/Users/harry/Downloads/showcase/src/components/fido-login-state/fido-login-state-controller.js",
+		"/Users/harry/Develop/ti8m-aj/build/components/application/application.html",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/stylesheets/application.scss",
+		"/Users/harry/Develop/ti8m-aj/build/components/index-state/index-state.html",
+		"/Users/harry/Develop/ti8m-aj/build/components/application/config/routing.js",
+		"/Users/harry/Develop/ti8m-aj/build/components/application/config/states.json",
+		"/Users/harry/Develop/ti8m-aj/src/components/index-state/index-state.scss",
+		"/Users/harry/Downloads/showcase/src/components/home-state/home-state.html",
+		"/Users/harry/Downloads/showcase/src/components/registration/registration-general-data-directive/registration-general-data-directive.html",
+		"/Users/harry/Downloads/showcase/src/components/registration/registration-general-data-directive/registration-general-data-directive-controller.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/application.html",
+		"/Users/harry/Downloads/showcase/src/components/registration-state/registration.html",
+		"/Users/harry/Develop/ti8m-aj/src/components/login-state/login-state.html",
+		"/Users/harry/Develop/ti8m-aj/build/components/application/stylesheets/application.css",
+		"/Users/harry/Develop/ti8m-aj/src/components/subscribe/subscribe-component.html",
+		"/Users/harry/Develop/ti8m-aj/src/components/login/login-component.scss",
+		"/Users/harry/Develop/ti8m-aj/src/components/login/login-component.html",
+		"/Users/harry/Develop/ti8m-aj/build/components/index-state/index-state.css",
+		"/Users/harry/Downloads/showcase/src/components/registration/registration-general-data-directive/registration-general-data-directive.js",
+		"/Users/harry/Downloads/showcase/src/components/home-state/home-route.js",
+		"/Users/harry/Downloads/showcase/src/components/home-state/index.js",
+		"/Users/harry/Downloads/showcase/src/components/home-state/home-state-controller.js",
+		"/Users/harry/Downloads/showcase/src/components/application/config/states.json",
+		"/Users/harry/Downloads/showcase/src/components/application/config/routing.js",
+		"/Users/harry/Downloads/showcase/src/components/application/application-controller.js",
+		"/Users/harry/Downloads/showcase/src/components/application/application.html",
+		"/Users/harry/Downloads/showcase/src/components/login-directive/login-directive.html",
+		"/Users/harry/Downloads/showcase/src/components/registration-state/registration-state-controller.js",
+		"/Users/harry/Develop/ti8m-aj/app/routes/users.js",
+		"/Users/harry/Develop/ti8m-aj/config/express.js",
+		"/Users/harry/Develop/ti8m-aj/config/env/development.js",
+		"/Users/harry/Develop/github/local/smingConnect/server/server.js",
+		"/Users/harry/Develop/ti8m-aj/config/mailer.js",
+		"/Users/harry/Downloads/material-design/register.html",
+		"/Users/harry/Develop/ti8m-aj/index.html",
+		"/Users/harry/Develop/ti8m-aj/app/controllers/users.js",
+		"/Users/harry/Develop/ti8m-aj/server.js",
+		"/Users/harry/Develop/ti8m-aj/gulp-tasks/serve.js",
+		"/Users/harry/Develop/ti8m-aj/config/mongoose.js",
+		"/Users/harry/Downloads/material-design/login.html",
+		"/Users/harry/Develop/ti8m-aj/gulpfile.js",
+		"/Users/harry/Downloads/showcase/gulp-tasks/default.js",
+		"/Users/harry/Downloads/showcase/gulp-tasks/watch.js",
+		"/Users/harry/Downloads/showcase/gulp-tasks/serve.js",
+		"/Users/harry/Develop/github/local/smingConnect/gulpfile.js",
+		"/Users/harry/Downloads/showcase/config/gulp.js",
+		"/Users/harry/Downloads/showcase/gulpfile.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/subscribe-state/subscribe-state.html",
+		"/Users/harry/Downloads/showcase/server.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/config/states.json",
+		"/Users/harry/Develop/ti8m-aj/src/components/index-state/index-state.html",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/config/routing.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/application-route.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/application/index.js",
+		"/Users/harry/Develop/ti8m-aj/src/components/index-state/index-route.js",
+		"/Users/harry/Develop/ti8m-aj/package.json",
+		"/Users/harry/Develop/github/local/smingConnect/client/templates/subscribe.html",
+		"/Users/harry/Develop/github/local/smingConnect/build/assets/js/app.js",
+		"/Users/harry/Develop/github/local/smingConnect/build/templates/home.html",
+		"/Users/harry/Develop/github/local/smingConnect/client/templates/login.html",
+		"/Users/harry/Develop/github/local/smingConnect/server.js",
+		"/Users/harry/Develop/github/local/smingConnect/server/configure.js",
+		"/Users/harry/Develop/github/local/smingConnect/server/routes.js",
+		"/Users/harry/Develop/github/local/smingConnect/package.json",
+		"/Users/harry/Develop/github/local/smingConnect/server/models/image.js",
+		"/Users/harry/Develop/github/local/smingConnect/server/models/index.js",
+		"/Users/harry/Develop/github/local/smingConnect/server/models/comment.js",
+		"/Users/harry/Develop/github/local/smingConnect/client/index.html",
+		"/Users/harry/Develop/github/local/smingConnect/client/assets/js/app.js",
+		"/Users/harry/Develop/github/local/smingConnect/client/templates/films.html",
+		"/Users/harry/Develop/github/local/smingConnect/app/routes.js",
+		"/Users/harry/Develop/github/local/smingConnect/app/route.js",
+		"/Users/harry/Develop/foundation/testapp/server.js",
+		"/Users/harry/Develop/github/local/smingConnect/client/assets/js/controllers/filmsCtrl.js",
+		"/Users/harry/Develop/github/local/smingConnect/client/templates/books.html",
+		"/Users/harry/Develop/github/local/smingConnect/client/assets/js/controllers/booksCtrl.js",
+		"/Users/harry/Develop/github/local/smingConnect/client/assets/js/booksCtrl.js",
+		"/Users/harry/Develop/foundation/smingConnect/gulpfile.js",
+		"/Users/harry/Develop/github/local/smingConnect/client/assets/scss/app.scss",
+		"/Users/harry/Develop/github/local/smingConnect/client/templates/home.html",
+		"/Users/harry/Develop/github/local/smingConnect/app.js",
+		"/Users/harry/Develop/foundation/smingServer/gulpfile.js",
+		"/Users/harry/Develop/foundation/smingServer/client/index.html",
+		"/Users/harry/Develop/foundation/smingServer/client/templates/home.html",
+		"/Users/harry/Develop/foundation/smingConnect/client/index.html",
+		"/Users/harry/Develop/foundation/smingServer/build/templates/home.html",
+		"/Users/harry/Develop/foundation/smingAPI/server.js",
+		"/Users/harry/Develop/foundation/smingAPI/package.json",
+		"/Users/harry/Develop/foundation/smingAPI/config.js",
+		"/Users/harry/Develop/foundation/testapp/movies.json",
+		"/Users/harry/Develop/foundation/testapp/app.js",
+		"/Users/harry/Develop/foundation/testapp/package.json",
+		"/Users/harry/Develop/foundation/smingConnect/client/assets/scss/_settings.scss",
+		"/Users/harry/Develop/foundation/smingConnect/client/templates/firmware.html",
+		"/Users/harry/Develop/foundation/smingConnect/client/templates/films.html",
+		"/Users/harry/Develop/foundation/smingConnect/client/assets/js/app.js",
+		"/Users/harry/Develop/foundation/smingConnect/client/templates/home.html",
+		"/Users/harry/Develop/foundation/smingConnect/client/assets/scss/app.scss",
+		"/Users/harry/Develop/foundation/app/gulpfile.js",
+		"/Users/harry/Develop/foundation/app/client/assets/js/app.js",
+		"/Users/harry/Develop/foundation/smingConnect/client/templates/Bundles.html",
+		"/Users/harry/Develop/foundation/smingApp/gulpfile.js",
+		"/Users/harry/Develop/foundation/myApp/bower.json",
+		"/Users/harry/Develop/foundation/myApp/gulpfile.js",
+		"/Users/harry/Downloads/part-1-sample/client/index.html",
+		"/Users/harry/Develop/foundation/smingApp/client/templates/contact.html",
+		"/Users/harry/Develop/foundation/smingApp/client/templates/about.html",
+		"/Users/harry/Develop/foundation/smingApp/client/templates/home.html",
+		"/Users/harry/Develop/foundation/smingApp/client/index.html",
+		"/Users/harry/Downloads/part-1-sample/client/templates/link1.html",
+		"/Users/harry/Downloads/part-1-sample/client/templates/link2.html",
+		"/Users/harry/Downloads/part-1-sample/build/templates/link1.html",
+		"/Users/harry/Develop/foundation/smingApp/build/templates/home.html",
+		"/Users/harry/Develop/foundation/smingApp/build/templates/contact.html",
+		"/Users/harry/Develop/foundation/smingApp/client/assets/scss/app.scss",
+		"/Users/harry/Downloads/part-1-sample/build/index.html",
+		"/Users/harry/Develop/foundation/smingApp/build/templates/about.html",
+		"/Users/harry/Develop/foundation/smingApp/client/templates/one.html",
+		"/Users/harry/Develop/foundation/smingApp/build/templates/About.html",
+		"/Users/harry/Downloads/chat/assets/css/app.css",
+		"/Users/harry/Downloads/chat/assets/css/app.css.map",
+		"/Users/harry/Develop/foundation/smingApp/client/assets/scss/_settings.scss",
+		"/Users/harry/Develop/foundation/smingApp/build/index.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"secureWebService",
+			"twilo",
+			"nav",
+			"background",
+			"price",
+			"pricing"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"size",
+			"option"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Blink":
+	{
+		"height": 100.0
+	},
+	"output.bmp280test":
+	{
+		"height": 100.0
+	},
+	"output.exec":
+	{
+		"height": 84.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mqtt_esp8266":
+	{
+		"height": 100.0
+	},
+	"output.stino_log":
+	{
+		"height": 100.0
+	},
+	"output.test":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 302.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

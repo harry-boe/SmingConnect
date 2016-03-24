@@ -4,30 +4,32 @@
 	<div flex flex-gt-xs="20" ></div>
 	<div flex flex-gt-xs="60" >
 
-	<md-content>
+	<h3>Register now</h3>
 
 <!-- The input form
 -->
 	<form name="registrationForm" ng-submit="registerController.executeForm()">
 <!-- 	UID / Email
  -->	
- 	<div layout="row">
+  	<div layout="row">
 		<md-input-container class="md-block" flex-gt-xs="40">
 		<label>User ID</label>
-		<input required name="userID" ng-model="registerController.userid">
+		<input required name="userId" ng-model="registerController.userId">
 		<div ng-messages="registrationForm.userID.$error">
 			<div ng-message="required">User name or Nich name you like to login with.</div>
+			<span id="invalid-uid" ng-bind="registerController.errorMessageUid" ></span>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
 		<label>Email</label>
-		<input required type="email" name="clientEmail" 
+		<input required type="email" name="eMail" 
 			ng-model="registerController.eMail" 
 			minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
 		<div ng-messages="registrationForm.eMail.$error" role="alert">
-		<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-			Please provide a valid eMail Address.
-		</div>
+			<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+				Please provide a valid eMail Address.
+			</div>
+			<span id="invalid-email" ng-bind="registerController.errorMessageEMail" ></span>
 		</div>
 		</md-input-container>
 	</div> 
@@ -36,14 +38,14 @@
 	<div layout="row">
 		<md-input-container class="md-block" flex-gt-xs="40">
 		<label>Name</label>
-		<input required name="name" ng-model="account.name">
+		<input required name="firstName" ng-model="registerController.firstName">
 		<div ng-messages="registrationForm.name.$error">
 			<div ng-message="required">Please provide your given name.</div>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
 		<label>Last Name</label>
-		<input required name="lastName" ng-model="account.lastName">
+		<input required name="lastName" ng-model="registerController.lastName">
 		<div ng-messages="registrationForm.lastName.$error">
 			<div ng-message="required">Please provide your last name.</div>
 		</div>
@@ -70,7 +72,7 @@
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-xs>
 		<label>Number</label>
-		<input name="info" ng-model="registerController.info">  
+		<input name="addressExt" ng-model="registerController.addressExt">  
 			<div class="hint" >Please provide a Street number or appartment.</div>
 		</md-input-container>
 	</div>
@@ -80,15 +82,16 @@
 		<md-input-container class="md-block" flex-gt-xs="70">
 		<label>City</label>
 		<input required name="city" ng-model="registerController.city">
-		<div ng-messages="registrationForm.lastName.$error">
+		<div ng-messages="registrationForm.city.$error">
 			<div ng-message="required">Please provide the name of you city.</div>
 		</div>
 		</md-input-container>
 
 		<md-input-container class="md-block" flex-gt-sm>
 		<label>Postal Code</label>
-		<input required type="number" name="zip" ng-model="registerController.zip" minlength="4" maxlength="5">
-		<div ng-messages="registrationForm.zip.$error" role="alert">
+		<input required type="number" name="postalCode" 
+			ng-model="registerController.postalCode" minlength="4" maxlength="5">
+		<div ng-messages="registrationForm.postalCode.$error" role="alert">
 			<div ng-message-exp="['required', 'minlength', 'maxlength']">Please provide a valid postal code.</div>
 		</div>
 		</md-input-container>
@@ -98,14 +101,14 @@
 	<div layout-gt-sm="row">
 		<md-input-container class="md-block" flex-gt-xs="70">
 		<label>Password</label>
-		<input required type="password" name="pwd" ng-model="registerController.pwd">
+		<input required type="password" name="password" ng-model="registerController.password">
 		<div ng-messages="registrationForm.pwd.$error">
 			<div ng-message="required">Please choose a password.</div>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-xs="70">
 		<label>Confirm Password</label>
-		<input required type="password" name="pwd2" ng-model="registerController.confirmPwd">
+		<input required type="password" name="confirmPwd" ng-model="registerController.confirmPwd">
 		<div ng-messages="registrationForm.confirmPwd.$error">
 			<div ng-message="required">Please confirm your password.</div>
 			<span id="invalid-pwd" ng-bind="registerController.errorMessagePwd" ></span>
@@ -119,8 +122,5 @@
 	</div>
 
 	</form>
-
-	</md-content>
-
 	</div>
 </div>

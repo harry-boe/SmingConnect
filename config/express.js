@@ -25,7 +25,7 @@ module.exports = function () {
     app.use(bodyParser.json());
     app.use(bodyParser.text({type: 'text/plain'}));
 
-    require('../app/routes/users.js')(app);
+    require('../app/routes/account-routes.js')(app);
 
     return app;
 };
