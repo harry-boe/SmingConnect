@@ -1,0 +1,41 @@
+.firmware-state {
+
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.sc-menu {
+	padding: 10px;
+  	margin: 10px;
+  	min-width: 120px;
+  	border-radius: 3px;
+  	font-size: 14px;
+  	text-align: center;
+  	text-transform: uppercase;
+  	text-decoration:none;
+  	border: none;
+  	outline: none;
+}
+
+.sc-icon {
+	height: 100px;
+    width: 100px;
+    vertical-align: middle;
+}
+
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}

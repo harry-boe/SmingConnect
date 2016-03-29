@@ -1,13 +1,16 @@
 
-<div layout="row" ng-cloak>
+<div layout="row" layout-align="center">
 
-	<div flex flex-gt-xs="20" ></div>
 	<div flex flex-gt-xs="60" >
 
-	<h3>Register now</h3>
+		<md-card>
 
-<!-- The input form
--->
+	<md-card-title>
+	 <md-card-title-text>Please register</md-card-title-text>
+	</md-card-title>
+
+        <md-card-content>
+
 	<form name="registrationForm" ng-submit="registerController.executeForm()">
 <!-- 	UID / Email
  -->	
@@ -15,8 +18,8 @@
 		<md-input-container class="md-block" flex-gt-xs="40">
 		<label>User ID</label>
 		<input required name="userId" ng-model="registerController.userId">
-		<div ng-messages="registrationForm.userID.$error">
-			<div ng-message="required">User name or Nich name you like to login with.</div>
+		<div ng-messages="registrationForm.userId.$error">
+			<div ng-message="required">User name or Nick name you like to login with.</div>
 			<span id="invalid-uid" ng-bind="registerController.errorMessageUid" ></span>
 		</div>
 		</md-input-container>
@@ -122,5 +125,8 @@
 	</div>
 
 	</form>
+	
+			        </md-card-content>
+		</md-card>
 	</div>
 </div>

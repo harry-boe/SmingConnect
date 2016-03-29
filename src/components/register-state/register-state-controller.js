@@ -1,11 +1,13 @@
 class RegisterStateController {
 
-  constructor(accountService, $location) {
+  constructor(accountService, $state) {
     this.accountService = accountService;
-    this.location = $location;
+    this.state = $state;
 
-    this.eMail = "john.doe@nowhere.net";
-    this.postalCode = 8000;
+ //   this.errorMessageUid = "User name or Nick name you like to login with.";
+
+    // this.eMail = "john.doe@nowhere.net";
+    // this.postalCode = 8000;
   };
 
   dataCheck() {
@@ -29,8 +31,8 @@ class RegisterStateController {
         this.errorMessageEMail = "Please check if you you aready registered this eMail";
         return false;
       } else {
-        console.log("registerUser user registratered");  
-        this.location.path( "/start" )            
+        console.log("registerUser " + this.userId + " registratered");  
+        this.state.go('app.setup');            
         return true;
       }
     });
@@ -45,7 +47,7 @@ class RegisterStateController {
     if (this.dataCheck() === true) {
      if (this.registerUser() === true) {
         console.log("user registratered");  
-        $location.path( "/start" )            
+        this.state.go('app.setup');           
      };
    }
  }
@@ -55,6 +57,6 @@ class RegisterStateController {
 
 export default [
 'accountService',
-'$location',
+'$state',
 RegisterStateController
 ];

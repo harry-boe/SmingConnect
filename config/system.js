@@ -17,6 +17,7 @@ System.config({
 
   map: {
     "angular": "github:angular/bower-angular@1.5.2",
+    "angular-file-upload": "github:danialfarid/ng-file-upload-bower@12.0.4",
     "angular-lazy": "github:matoilic/angular-lazy@0.2.2",
     "angular-material": "github:angular/bower-material@1.0.6",
     "angular-messages": "github:angular/bower-angular-messages@1.5.2",
@@ -30,6 +31,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.20",
     "json": "github:systemjs/plugin-json@0.1.0",
     "lodash": "npm:lodash@4.6.1",
+    "ng-file-upload": "npm:ng-file-upload@12.0.4",
     "oclazyload": "github:ocombe/oclazyload@1.0.9",
     "text": "github:systemjs/plugin-text@0.0.2",
     "ui-router-extras": "github:christopherthielen/ui-router-extras@0.0.14",
@@ -162,6 +164,9 @@ System.config({
     },
     "npm:lodash@4.6.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:ng-file-upload@12.0.4": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:os-browserify@0.1.2": {

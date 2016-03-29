@@ -16,5 +16,23 @@
     "url": "register",
     "type": "load",
     "src": "components/register-state/index"
+  },
+  {
+    "name": "app.setup",
+    "url": "setup",
+    "type": "load",
+    "src": "components/setup-state/index"
+  },
+  {
+    "name": "app.service",
+    "url": "service",
+    "type": "load",
+    "src": "components/service-state/index"
+  },
+  {
+    "name": "app.firmware",
+    "url": "firmware",
+    "type": "load",
+    "src": "components/firmware-state/index"
   }
 ]
