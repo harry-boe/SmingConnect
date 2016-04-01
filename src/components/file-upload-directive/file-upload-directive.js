@@ -12,7 +12,6 @@ function fileUploadDirective($parse) {
 
 		var model = $parse(attr.fileModel);
         var modelSetter = model.assign;
-        console.log("modelSetter " + model);
 
    	  	elem.bind('change', function(evt) {
 

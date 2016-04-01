@@ -27,6 +27,7 @@ module.exports = function () {
 
     require('../app/routes/account-routes.js')(app);
     require('../app/routes/image-routes.js')(app);
+    require('../app/routes/appService-routes.js')(app);
 
     return app;
 };

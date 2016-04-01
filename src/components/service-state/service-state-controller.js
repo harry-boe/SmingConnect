@@ -1,61 +1,81 @@
 class ServiceStateController {
 
-	constructor($scope, appServiceService, $http) {
+	constructor($state, $scope, $mdToast, imageService, appServiceService) {
+    this.state = $state;
 		this.scope = $scope;
+    this.mdToast = $mdToast;
+    this.imageService = imageService;
 		this.appServiceService = appServiceService;
-		this.http = $http;
-
-		this.files = '';
 	};
 	
-	
-  registerAppService() {
-  this.appServiceService.register(
-    this.serviceName, this.announcementID, this.description, this.scope.file
-    ).then((registerSucess) => {
-        console.log("registerAppService " + this.userId + " registratered");
-        this.state.go('app.setup');
-      }, (registerError) => {
-        // this.errorMessageUid = "User or eMail allready used";
-        // this.errorMessageEMail = "Please check if you you aready registered this eMail";
-        console.log("registration failed " + registerError.status);        
+
+  executeForm() {
+
+    this.errorMessageServiceName = null;
+    this.errorMessageAnnouncementID = null;
+
+    console.log('call doSubmit()');
+    // we have to be synchronious here
+    // step 1 save image
+    var fd = new FormData();
+    console.log('appIcon ' + this.scope.file);
+    if (this.scope.file == null) {
+        this.mdToast.show(
+          this.mdToast.simple()
+            .textContent('Please upload an application icon!')
+            .position('top right')
+            .hideDelay(3000)
+        )
+        return false;
+    };
+    fd.append('appIcon', this.scope.file);
+    this.imageService.upload(
+      fd
+    ).then((uploadSuccess) => {
+        console.log('imageService ' + uploadSuccess.data.filename + ' uploaded: ');
+        this.filename = uploadSuccess.data.filename;
+        this.mimetype = uploadSuccess.data.mimetype;
+        this.fileSize = uploadSuccess.data.size;
+
+        // step 2 save form data
+        if (this.registerAppService() === true) {
+          this.state.go('app.setup');      
+        } else {
+          this.errorMessageServiceName = "Service already registered";
+          this.errorMessageAnnouncementID = "Announcment ID alredy defined";
+          return false;       
+        }
+      }, (uploadError) => {
+        console.log("imageService failed " + uploadError.status);   
+        return false;  
       }
     );
   }
 
-  uploadFile() {
-    var uploadUrl = 'http://localhost:3000/image/upload';
-    var fd = new FormData();
-        fd.append('appIcon', this.scope.file);
-        this.http.post(uploadUrl, fd, {
-            transformRequest: angular.identity,
-            headers: {'Content-Type': undefined}
-        })
-        .success(function(){
-        })
-        .error(function(){
-        });
+	
+  registerAppService() {
+    console.log('call registerAppService()');
+    this.appServiceService.register(
+      this.serviceName, this.announcementID, this.description, 
+      this.filename, this.mimetype, this.fileSize
+    ).then((registerSuccess) => {
+        console.log("registerAppService " + this.serviceName + " registratered");
+        return true;
+      }, (registerError) => {
+        console.log("Service registration failed " + registerError.status); 
+        return false;       
+      }
+    );
   }
-
-
-	executeForm() {
-		console.log('RegisterState execute submit');
-		console.log('announcementID' + this.announcementID);
-		console.log('description' + this.description);
-		console.log('files [' + this.scope.file + ']');
-    this.uploadFile();
-    this.registerAppService();
-	};
 
 
 }
 
-//ServiceStateController.$inject = ["$scope", "fileUpload", "$timeout"];
-
-
 export default [
+'$state',
 '$scope',
+'$mdToast',
+'imageService',
 'appServiceService',
-'$http',
 ServiceStateController
 ];

@@ -20,7 +20,7 @@
 		<input required name="userId" ng-model="registerController.userId">
 		<div ng-messages="registrationForm.userId.$error">
 			<div ng-message="required">User name or Nick name you like to login with.</div>
-			<span id="invalid-uid" ng-bind="registerController.errorMessageUid" ></span>
+			<span id="invalid-uid" style="font-size:.8em" ng-bind="registerController.errorMessageUid" ></span>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
@@ -32,7 +32,7 @@
 			<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
 				Please provide a valid eMail Address.
 			</div>
-			<span id="invalid-email" ng-bind="registerController.errorMessageEMail" ></span>
+			<span id="invalid-email" style="font-size:.8em" ng-bind="registerController.errorMessageEMail" ></span>
 		</div>
 		</md-input-container>
 	</div> 
@@ -114,7 +114,7 @@
 		<input required type="password" name="confirmPwd" ng-model="registerController.confirmPwd">
 		<div ng-messages="registrationForm.confirmPwd.$error">
 			<div ng-message="required">Please confirm your password.</div>
-			<span id="invalid-pwd" ng-bind="registerController.errorMessagePwd" ></span>
+			<span id="invalid-pwd" style="font-size:.8em" ng-bind="registerController.errorMessagePwd" ></span>
 		</div>
 		</md-input-container>
 	</div>

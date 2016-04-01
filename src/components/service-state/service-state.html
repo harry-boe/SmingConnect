@@ -27,7 +27,7 @@
 			<input required name="serviceName" ng-model="serviceController.serviceName">
 			<div ng-messages="serviceForm.serviceName.$error">
 				<div ng-message="required">Please enter an Service/Application name.</div>
-				<span id="invalid-appName" ng-bind="serviceController.errorMessageserviceName" ></span>
+				<span id="invalid-appName" style="font-size:.8em" ng-bind="serviceController.errorMessageServiceName" ></span>
 			</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
@@ -35,7 +35,7 @@
 			<input required name="announcementID" ng-model="serviceController.announcementID">
 			<div ng-messages="serviceForm.announcementID.$error">
 				<div ng-message="required">Please enter a annoucement ID for your Service.</div>
-				<span id="invalid-appId" ng-bind="serviceController.errorMessageAnnouncementID" ></span>
+				<span id="invalid-appId" style="font-size:.8em" ng-bind="serviceController.errorMessageAnnouncementID" ></span>
 			</div>
 		</md-input-container>
 		</div>

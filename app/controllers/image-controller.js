@@ -21,7 +21,14 @@ exports.uploadFile = function (req, res) {
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end(req.file.filename);
+        // only provide usefull data
+        delete req.file.destination;
+        delete req.file.encoding;        
+        delete req.file.originalname;
+        delete req.file.path;
+        delete req.file.fieldname;
+        res.json(req.file);
+//        res.end(req.file);
     });
 };
 

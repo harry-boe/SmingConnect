@@ -5,13 +5,15 @@ class ApplicationServiceService {
 		this.baseUrl = baseUrl;
 	}
 
-     register(AppServiceName, annoucementID, description, file) {
+     register(AppServiceName, annoucementID, description, file, mimeType, size) {
      	return this.$http.post(
                this.baseUrl + '/register', {
      			AppServiceName: AppServiceName,
      			annoucementID: annoucementID,
      			description: description,
-                    file: file
+                    imageRef: file,
+                    mimeType: mimeType,
+                    size: size
                });
      	}
      }

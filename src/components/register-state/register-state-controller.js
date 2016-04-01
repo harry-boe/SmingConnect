@@ -24,7 +24,7 @@ class RegisterStateController {
     this.userId, this.eMail, this.firstName, this.lastName,
     this.company, this.address, this.addressExt, this.city,
     this.postalCode, this.password
-    ).then((registerSucess) => {
+    ).then((registerSuccess) => {
         console.log("registerUser " + this.userId + " registratered");
         this.state.go('app.setup');
       }, (registerError) => {
