@@ -5,8 +5,6 @@
 
 	<md-card>
 
-<!-- 	<div flex flex-gt-xs="60" >
- -->
 	<md-card-title>
 	 <md-card-title-text>Manage your Services</md-card-title-text>
 	</md-card-title>
@@ -18,26 +16,26 @@
 
   	<div layout="row" layout-align="center center">
 	  	<div class="md-block" flex-gt-xs="40">
-		<input type="file" name="file" file-model="fileName" id="file" file-upload class="inputfile" />
+		<input type="file" name="appIcon" file-model="file" id="file" file-upload class="inputfile" />
 			<label for="file" id="preview">
 			  	<md-icon id="icon-template" class="sc-upload" md-svg-icon="build/components/application/icons/Icon_Template.svg"></md-icon>
 			</label>
   		</div>
   		<div layout="column" flex-gt-xs="60">
 		<md-input-container class="md-block" flex-gt-sm>
-			<label>Application Name</label>
-			<input required name="appName" ng-model="serviceController.appName">
-			<div ng-messages="serviceForm.appName.$error">
-				<div ng-message="required">Please enter an Application name.</div>
-				<span id="invalid-appName" ng-bind="serviceController.errorMessageAppName" ></span>
+			<label>Service Name</label>
+			<input required name="serviceName" ng-model="serviceController.serviceName">
+			<div ng-messages="serviceForm.serviceName.$error">
+				<div ng-message="required">Please enter an Service/Application name.</div>
+				<span id="invalid-appName" ng-bind="serviceController.errorMessageserviceName" ></span>
 			</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
-			<label>Application ID</label>
-			<input required name="appID" ng-model="serviceController.appID">
-			<div ng-messages="serviceForm.appID.$error">
-				<div ng-message="required">Please enter a annoucement ID for yor Application.</div>
-				<span id="invalid-appId" ng-bind="serviceController.errorMessageAppID" ></span>
+			<label>Annoucement ID</label>
+			<input required name="announcementID" ng-model="serviceController.announcementID">
+			<div ng-messages="serviceForm.announcementID.$error">
+				<div ng-message="required">Please enter a annoucement ID for your Service.</div>
+				<span id="invalid-appId" ng-bind="serviceController.errorMessageAnnouncementID" ></span>
 			</div>
 		</md-input-container>
 		</div>

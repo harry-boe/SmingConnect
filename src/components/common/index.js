@@ -1,7 +1,7 @@
 import angular from 'angular';
-import HttpService from './services/http-service';
 import AccountService from './services/account-service';
-import FileUploadService from './services/fileUpload-service';
+import ApplicationServiceService from './services/app-service-service';
+import FileUploadService from './services/file-upload-service';
 
 
 const dependencies = [
@@ -9,7 +9,7 @@ const dependencies = [
 
 export default angular
     .module('common', dependencies)
-    .service('http', HttpService)
     .service('accountService', AccountService)
+    .service('appServiceService', ApplicationServiceService)
     .service('fileUpload', FileUploadService);
 

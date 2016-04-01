@@ -26,6 +26,7 @@ module.exports = function () {
     app.use(bodyParser.text({type: 'text/plain'}));
 
     require('../app/routes/account-routes.js')(app);
+    require('../app/routes/image-routes.js')(app);
 
     return app;
 };

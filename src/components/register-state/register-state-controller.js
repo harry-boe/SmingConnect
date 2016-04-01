@@ -18,39 +18,32 @@ class RegisterStateController {
    return true;
  }
 
+
  registerUser() {
-  console.log('RegisterState call registerUser');
   this.accountService.register(
     this.userId, this.eMail, this.firstName, this.lastName,
     this.company, this.address, this.addressExt, this.city,
     this.postalCode, this.password
-    ).then((registerResponse) => {
-      if (typeof registerResponse.status != 'undefined') {
-        console.log("registration failed " + registerResponse.status);
+    ).then((registerSucess) => {
+        console.log("registerUser " + this.userId + " registratered");
+        this.state.go('app.setup');
+      }, (registerError) => {
         this.errorMessageUid = "User or eMail allready used";
         this.errorMessageEMail = "Please check if you you aready registered this eMail";
-        return false;
-      } else {
-        console.log("registerUser " + this.userId + " registratered");  
-        this.state.go('app.setup');            
-        return true;
+        console.log("registration failed " + registerError.status);        
       }
-    });
+    );
   }
 
 
   executeForm() {
-    console.log('RegisterState execute submit');
     this.errorMessagePwd = null;
     this.errorMessageUid = null;
     this.errorMessageEMail = null;
     if (this.dataCheck() === true) {
-     if (this.registerUser() === true) {
-        console.log("user registratered");  
-        this.state.go('app.setup');           
-     };
-   }
- }
+      this.registerUser() 
+    }
+  }
 
 }
 
