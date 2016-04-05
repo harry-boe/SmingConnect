@@ -38,6 +38,14 @@ var AccountSchema = new Schema({
         type: String,
         required: false
     },
+    userCountry: {
+        type: String,
+        required: true
+    },
+    userState: {
+        type: String,
+        required: true
+    },
     city: {
         type: String,
         required: true

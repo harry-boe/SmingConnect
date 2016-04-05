@@ -34,5 +34,11 @@
     "url": "firmware",
     "type": "load",
     "src": "components/firmware-state/index"
+  },
+  {
+    "name": "app.ca",
+    "url": "ca",
+    "type": "load",
+    "src": "components/ca-state/index"
   }
 ]

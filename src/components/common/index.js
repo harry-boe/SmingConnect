@@ -1,4 +1,5 @@
 import angular from 'angular';
+import countries from './countries.js';
 import AccountService from './services/account-service';
 import ApplicationServiceService from './services/app-service-service';
 import ImageService from './services/image-service';

@@ -5,7 +5,7 @@ class AccountService {
 		this.baseUrl = baseUrl;
 	}
 
-     register(userId, eMail, firstName, lastName, company, address, addressExt, city, postalCode, password) {
+     register(userId, eMail, firstName, lastName, company, address, addressExt, userCountry, userState, city, postalCode, password) {
      	return this.$http.post(
                this.baseUrl + '/register', {
      			userId: userId,
@@ -15,6 +15,8 @@ class AccountService {
      			company: company,
      			address: address,
      			addressExt: addressExt,
+                    userCountry: userCountry,
+                    userState: userState,
      			city: city,
      			postalCode: postalCode,
      			password: password

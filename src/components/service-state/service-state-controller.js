@@ -39,7 +39,7 @@ class ServiceStateController {
 
         // step 2 save form data
         if (this.registerAppService() === true) {
-          this.state.go('app.setup');      
+//          this.state.go('app.setup');      
         } else {
           this.errorMessageServiceName = "Service already registered";
           this.errorMessageAnnouncementID = "Announcment ID alredy defined";
@@ -60,6 +60,7 @@ class ServiceStateController {
       this.filename, this.mimetype, this.fileSize
     ).then((registerSuccess) => {
         console.log("registerAppService " + this.serviceName + " registratered");
+        this.state.go('app.setup');      
         return true;
       }, (registerError) => {
         console.log("Service registration failed " + registerError.status); 

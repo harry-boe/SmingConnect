@@ -63,34 +63,24 @@
 		</md-input-container>
 	</div>      
 
-<!-- 	Address / StreetNo
+<!-- 	Address / StreetNo / ZIP
  -->	
 	<div layout-gt-sm="row">
-		<md-input-container class="md-block" flex-gt-xs="70">
+		<md-input-container class="md-block" flex-gt-xs="50">
 		<label>Address</label>
 		<input required name="address" ng-model="registerController.address">
 		<div ng-messages="registrationForm.address.$error">
 			<div ng-message="required">Please provide a Street or Building.</div>
 		</div>
 		</md-input-container>
-		<md-input-container class="md-block" flex-gt-xs>
+		<md-input-container class="md-block" flex-gt-xs="25">
 		<label>Number</label>
 		<input name="addressExt" ng-model="registerController.addressExt">  
-			<div class="hint" >Please provide a Street number or appartment.</div>
-		</md-input-container>
-	</div>
-<!-- 	Address / StreetNo
- -->	
-	<div layout-gt-sm="row">
-		<md-input-container class="md-block" flex-gt-xs="70">
-		<label>City</label>
-		<input required name="city" ng-model="registerController.city">
-		<div ng-messages="registrationForm.city.$error">
-			<div ng-message="required">Please provide the name of you city.</div>
+		<div ng-messages="registrationForm.lastName.$error">
+			<div ng-message="required">Please provide a Street number or appartment.</div>
 		</div>
 		</md-input-container>
-
-		<md-input-container class="md-block" flex-gt-sm>
+				<md-input-container class="md-block" flex-gt-sm>
 		<label>Postal Code</label>
 		<input required type="number" name="postalCode" 
 			ng-model="registerController.postalCode" minlength="4" maxlength="5">
@@ -98,7 +88,48 @@
 			<div ng-message-exp="['required', 'minlength', 'maxlength']">Please provide a valid postal code.</div>
 		</div>
 		</md-input-container>
+
 	</div>
+<!-- 	Country  / State / city
+ -->		
+	<div layout-gt-sm="row">
+		<md-input-container class="md-block" flex-gt-xs="50">
+			<label>Country</label>
+            <md-select required ng-model="registerController.userCountry" 
+            	ng-change="registerController.onCountryChange()">
+              <md-option ng-repeat="country in registerController.countries" value="{{country}}">
+                {{country}}
+              </md-option>
+            </md-select>
+		<div ng-messages="registrationForm.country.$error">
+			<div ng-message="required">Please select the name of you country.</div>
+		</div>
+		</md-input-container>
+
+		<md-input-container class="md-block" flex-gt-xs="25">
+            <label>State</label>
+            <md-select required ng-model="registerController.userState">
+              <md-option ng-repeat="optState in registerController.states" value="{{optState}}">
+                {{optState}}
+              </md-option>
+            </md-select>
+		<div ng-messages="registrationForm.state.$error">
+			<div ng-message="required">Please select the state in you country.</div>
+		</div>
+        </md-input-container>
+        	<div layout-gt-sm="row">
+		<md-input-container class="md-block" flex-gt-sm>
+		<label>City</label>
+		<input required name="city" ng-model="registerController.city">
+		<div ng-messages="registrationForm.city.$error">
+			<div ng-message="required">Please provide the name of you city.</div>
+		</div>
+		</md-input-container>
+	</div>
+	</div>
+<!-- 	Address / StreetNo
+ -->	
+
 <!-- 	Password / Confirm PWD
  -->	
 	<div layout-gt-sm="row">
