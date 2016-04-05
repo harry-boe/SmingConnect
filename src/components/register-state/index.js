@@ -3,7 +3,6 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-translate';
 import 'angular-messages';
-import countries from './countries.js';
 import translationsModule from './i18n/translations';
 import RegisterStateController from './register-state-controller';
 import registerRouteConfig from './register-route';

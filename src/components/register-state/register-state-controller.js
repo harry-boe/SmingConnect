@@ -273,9 +273,7 @@ class RegisterStateController {
 
 
   onCountryChange() {
-    console.log("Selected country :", this.userCountry);
     var index = this.countries.indexOf(this.userCountry);
-    console.log("Index  is :", index); 
     this.states = this.s_a[index+1].split("|");   
   }
 

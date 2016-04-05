@@ -1,0 +1,102 @@
+<md-card class="ca-root-cert-entry">
+
+	  <md-card-title>
+	   <md-card-title-text>Define the Issuer for your Root Certificate</md-card-title-text>
+	  </md-card-title>
+
+	  <md-card-content>
+	  <form name="caRootForm" ng-submit="CaRootEntryCtrl.executeForm()">
+
+	<!-- 	Common name  / Email
+	 -->	
+	  	<div layout="row">
+			<md-input-container class="md-block" flex-gt-xs="50">
+			<label>Common Name</label>
+			<input required name="cn" ng-model="CaRootEntryCtrl.cn">
+			<div ng-messages="registrationForm.cn.$error">
+				<div ng-message="required">Enter the Common Name for your Root Certificate.</div>
+				<span id="invalid-cn" style="font-size:.8em" 
+				ng-bind="CaRootEntryCtrl.errorMessageCN" ></span>
+			</div>
+			</md-input-container>
+			<md-input-container class="md-block" flex-gt-sm>
+			<label>Email</label>
+			<input required type="email" name="eMail" 
+				ng-model="CaRootEntryCtrl.eMail" 
+				minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+			<div ng-messages="registrationForm.eMail.$error" role="alert">
+				<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+					Please provide a valid eMail Address for your Root Certificate.
+				</div>
+				<span id="invalid-email" style="font-size:.8em" ng-bind="CaRootEntryCtrl.errorMessageEMail" ></span>
+			</div>
+			</md-input-container>
+		</div> 
+
+	    <div layout="row">
+	      	<md-input-container class="md-block" flex-gt-xs="50">
+			<label>Organization</label>
+			<input required name="organisation" ng-model="CaRootEntryCtrl.organisation">
+			<div ng-messages="caRootForm.organisation.$error">
+				<div ng-message="required">Please enter the Organisation for your Root CA.</div>
+				<span id="invalid-organisation" style="font-size:.8em" 
+				ng-bind="CaRootEntryCtrl.errorMessageOrganisation" ></span>
+			</div>
+			</md-input-container>
+	      	<md-input-container class="md-block" flex-gt-sm>
+			<label>Organizational Unit</label>
+			<input required name="orgUnit" ng-model="CaRootEntryCtrl.orgUnit">
+			<div ng-messages="caRootForm.orgUnit.$error">
+				<div ng-message="required">Please enter the Organisational Unit for your Root CA.</div>
+				<span id="invalid-organisation" style="font-size:.8em" 
+				ng-bind="CaRootEntryCtrl.errorMessageOrgUnit" ></span>
+			</div>
+			</md-input-container>
+		</div>
+
+	    <div layout="row">
+<!-- 	Country  / State / city
+ -->		
+			<md-input-container class="md-block" flex-gt-xs="50">
+				<label>Country</label>
+	            <md-select ng-model="CaRootEntryCtrl.userCountry" 
+	            	ng-change="registerController.onCountryChange()">
+	              <md-option ng-repeat="country in CaRootEntryCtrl.countries" value="{{country}}">
+	                {{country}}
+	              </md-option>
+	            </md-select>
+			<div ng-messages="registrationForm.country.$error">
+				<div ng-message="required">Please select the name of you country.</div>
+			</div>
+			</md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs="25">
+	            <label>State</label>
+	            <md-select ng-model="CaRootEntryCtrl.userState">
+	              <md-option ng-repeat="optState in CaRootEntryCtrl.states" value="{{optState}}">
+	                {{optState}}
+	              </md-option>
+	            </md-select>
+			<div ng-messages="registrationForm.state.$error">
+				<div ng-message="required">Please select the state in you country.</div>
+			</div>
+	        </md-input-container>
+
+			<md-input-container class="md-block" flex-gt-sm>
+			<label>City</label>
+			<input required name="city" ng-model="CaRootEntryCtrl.city">
+			<div ng-messages="CaRootEntryCtrl.city.$error">
+				<div ng-message="required">Please provide the name of you city.</div>
+			</div>
+			</md-input-container>
+		</div>
+
+	    <div layout="row">
+      		<div layout-gt-sm="row" layout-align="end center" flex-gt-sm>
+				<md-button type="submit"  class="md-raised md-primary">Create Root Cert</md-button>
+			</div>
+	    </div>
+	  </form>
+	  </md-card-content>
+
+	</md-card>
