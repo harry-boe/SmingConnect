@@ -12,10 +12,10 @@
     "src": "components/index-state/index"
   },
   {
-    "name": "app.register",
-    "url": "register",
+    "name": "app.user",
+    "url": "user",
     "type": "load",
-    "src": "components/register-state/index"
+    "src": "components/user-state/index"
   },
   {
     "name": "app.setup",

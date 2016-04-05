@@ -12,7 +12,7 @@ module.exports = function () {
     });
 
     
-    require('../app/models/account.js');
+    require('../app/models/user.js');
     require('../app/models/appService.js');
 
     return db;

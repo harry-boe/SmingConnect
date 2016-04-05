@@ -1,0 +1,54 @@
+<md-card class="service-entry">
+
+	<md-card-title>
+	 <md-card-title-text>Manage your Services</md-card-title-text>
+	</md-card-title>
+
+	<md-card-content>
+
+	<form name="serviceForm" ng-submit="ServiceEntryController.executeForm()">
+
+
+  	<div layout="row" layout-align="center center">
+	  	<div class="md-block" flex-gt-xs="40">
+		<input type="file" name="appIcon" file-model="file" id="file" file-upload class="inputfile" />
+			<label for="file" id="preview">
+			  	<md-icon id="icon-template" class="sc-upload" md-svg-icon="build/components/application/icons/Icon_Template.svg"></md-icon>
+			</label>
+  		</div>
+  		<div layout="column" flex-gt-xs="60">
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Service Name</label>
+			<input required name="serviceName" ng-model="ServiceEntryController.serviceName">
+			<div ng-messages="serviceForm.serviceName.$error">
+				<div ng-message="required">Please enter an Service/Application name.</div>
+				<span id="invalid-appName" style="font-size:.8em" ng-bind="serviceController.errorMessageServiceName" ></span>
+			</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Annoucement ID</label>
+			<input required name="announcementID" ng-model="ServiceEntryController.announcementID">
+			<div ng-messages="serviceForm.announcementID.$error">
+				<div ng-message="required">Please enter a annoucement ID for your Service.</div>
+				<span id="invalid-appId" style="font-size:.8em" ng-bind="ServiceEntryController.errorMessageAnnouncementID" ></span>
+			</div>
+		</md-input-container>
+		</div>
+  	</div>
+  	<div layout="row">
+        <md-input-container name="description" class="md-block" flex-gt-sm>
+          <label>Description</label>
+          <textarea ng-model="ServiceEntryController.description" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+  	</div>
+
+  	<div layout-gt-sm="row" layout-align="end center">
+		<md-button type="submit"  class="md-raised md-primary">Submit</md-button>
+		<md-button ui-sref="app.index" class="md-raised md-primary">Cancel</md-button>
+	</div>
+
+
+	</form>
+	</md-card-content>
+
+ </md-card>

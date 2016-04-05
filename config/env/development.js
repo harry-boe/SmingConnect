@@ -1,5 +1,6 @@
 module.exports = {
     db: 'mongodb://localhost/test'
+
     // mailer: {
     //     host: '127.0.0.1',
     //     port: 25,

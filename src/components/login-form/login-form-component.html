@@ -1,0 +1,82 @@
+
+<div class="login-form" ng-cloak>
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Sign in</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="LoginFormController.cancel()">
+          <md-icon md-svg-src="build/components/application/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+   	<div layout="row" style="width: 500px;">
+   	<div layout="column" layout-align="center center" layout-padding flex-gt-xs="60">
+   		<form name="registrationForm" ng-submit="LoginFormController.login()">
+   		<div layout="row">
+		<md-input-container class="md-block">
+			<label>Username</label>
+				<input required name="username" ng-model="LoginFormController.username">
+			</md-input-container>
+		</div>
+		<div layout="row">
+		<md-input-container class="md-block">
+			<label>Password</label>
+			<input required type="password" name="password" ng-model="LoginFormController.password">
+			<div ng-messages="registrationForm.password.$error">
+				<span id="login-failed" style="font-size:.8em" 
+					ng-bind="LoginFormController.errorMessageLogin" ></span>
+			</div>
+		</md-input-container>
+		</div>
+		<div layout="row" layout-align="center">
+			<md-button type="submit"  class="md-raised md-primary">Login</md-button>
+		</div>
+		</form>
+	</div>
+  	<div layout="column" layout-align="center">
+  		<div layout="row">
+	        <md-button class="md-fab md-primary" aria-label="Facebook">
+	            <md-icon md-svg-src="build/components/application/icons/facebook.svg"></md-icon>
+	            <md-tooltip md-direction="top">
+          			Sign up with Facebook
+        		</md-tooltip>
+	        </md-button>
+	        <md-button class="md-fab md-primary" aria-label="Twitter">
+	            <md-icon md-svg-src="build/components/application/icons/twitter.svg"></md-icon>
+	            <md-tooltip md-direction="top">
+          			Sign up with Twitter
+        		</md-tooltip>
+	        </md-button>
+	    </div>
+  		<div layout="row">
+	        <md-button class="md-fab md-primary" aria-label="google">
+	            <md-icon md-svg-src="build/components/application/icons/google.svg"></md-icon>
+	            <md-tooltip md-direction="bottom">
+          			Sign up with Google
+        		</md-tooltip>
+	        </md-button>
+	        <md-button class="md-fab md-primary" aria-label="github">
+	            <md-icon md-svg-src="build/components/application/icons/github.svg"></md-icon>
+	            <md-tooltip md-direction="bottom">
+          			Sign up with Github
+        		</md-tooltip>
+	        </md-button>
+    	</div>
+  	</div>
+  	</div>
+  	<div layout="row" layout-align="center">
+		<md-button ng-href="{{googleUrl}}" target="_blank">Forgot Password?</md-button>
+		<md-button ng-href="{{googleUrl}}" target="_blank">Sign up here</md-button>
+    </div>
+
+
+
+ </md-dialog-content>
+
+</div>
+
+

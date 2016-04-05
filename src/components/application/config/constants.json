@@ -1,6 +1,7 @@
 {
 	  "apiBaseUrl": "http://localhost:3000/api",
 	  "apiAccountUrl": "http://localhost:3000/api/account",
+	  "apiUserUrl": "http://localhost:3000/api/user",
 	  "apiAppServiceUrl": "http://localhost:3000/api/appService",
 	  "uploadUrl": "http://localhost:3000/image/upload"
 }
