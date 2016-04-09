@@ -5,12 +5,35 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 var mongoose = require('./config/mongoose');
 var express = require('./config/express');
+var passport = require('./config/passport');
 
-var http = require('http');
-var db = mongoose();
-var app = express(db);
-var fs = require('fs');
-var serveStatic = require('serve-static');
+var http = require('http'),
+	db = mongoose(),
+	app = express(db),
+    passport = passport(),
+	session = require('express-session'),
+    cookieParser = require('cookie-parser'),
+    lusca = require('lusca'),
+	serveStatic = require('serve-static');
+
+
+//this or other session management will be required
+app.use(session({
+    secret: 'go4sming',
+    resave: true,
+    saveUninitialized: true
+}));
+
+app.use(cookieParser());
+
+app.use(lusca({
+    csrf: { angular: true },
+    csp: { /* ... */},
+    xframe: 'SAMEORIGIN',
+    p3p: 'SMING',
+    hsts: {maxAge: 31536000, includeSubDomains: true, preload: true},
+    xssProtection: true
+}));
 
 // var options = {
 //     key: fs.readFileSync('./certs/key.pem'),

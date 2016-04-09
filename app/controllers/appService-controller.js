@@ -3,8 +3,6 @@
 var config = require('../../config/config.js');
 var AppService = require('mongoose').model('AppService');
 
-
-
 exports.create = function (req, res) {
 
 	var appService = new AppService(req.body);

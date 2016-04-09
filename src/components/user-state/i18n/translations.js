@@ -7,5 +7,5 @@ const dependencies = [
 ];
 
 export default angular
-    .module('register-state-component-translations', dependencies)
+    .module('user-state-component-translations', dependencies)
     .config(en);

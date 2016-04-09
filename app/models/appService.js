@@ -32,4 +32,4 @@ var AppServiceSchema = new Schema({
     }
 });
 
-User = mongoose.model('AppService', AppServiceSchema);
+AppService = mongoose.model('AppService', AppServiceSchema);

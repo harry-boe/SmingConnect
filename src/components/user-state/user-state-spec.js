@@ -2,7 +2,7 @@ import angular from 'angular';
 import 'angular-mocks';
 import component from './index';
 
-describe('Register State', () => {
+describe('User State', () => {
     beforeEach(angular.mock.module(component.name));
 
     it('should pass the dummy test to verify the karma setup', () => {

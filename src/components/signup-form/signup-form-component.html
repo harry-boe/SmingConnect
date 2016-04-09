@@ -1,38 +1,33 @@
-
-<div layout="row" layout-align="center" layout-margin>
-
-	<div flex flex-gt-xs="70" >
-
-		<md-card>
+<md-card class="rsignup-form">
 
 	<md-card-title>
 	 <md-card-title-text>Please register</md-card-title-text>
 	</md-card-title>
 
-        <md-card-content>
+<md-card-content>
 
-	<form name="registrationForm" ng-submit="registerController.executeForm()">
+	<form name="signupForm" ng-submit="SignupFormController.executeForm()">
 <!-- 	UID / Email
  -->	
   	<div layout="row">
 		<md-input-container class="md-block" flex-gt-xs="40">
 		<label>User ID</label>
-		<input required name="userId" ng-model="registerController.userId">
-		<div ng-messages="registrationForm.userId.$error">
+		<input required name="username" ng-model="SignupFormController.username">
+		<div ng-messages="signupForm.username.$error">
 			<div ng-message="required">User name or Nick name you like to login with.</div>
-			<span id="invalid-uid" style="font-size:.8em" ng-bind="registerController.errorMessageUid" ></span>
+			<span id="invalid-uid" style="font-size:.8em" ng-bind="SignupFormController.errorMessageUsername" ></span>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
 		<label>Email</label>
 		<input required type="email" name="eMail" 
-			ng-model="registerController.eMail" 
+			ng-model="SignupFormController.eMail" 
 			minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-		<div ng-messages="registrationForm.eMail.$error" role="alert">
+		<div ng-messages="signupForm.eMail.$error" role="alert">
 			<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
 				Please provide a valid eMail Address.
 			</div>
-			<span id="invalid-email" style="font-size:.8em" ng-bind="registerController.errorMessageEMail" ></span>
+			<span id="invalid-email" style="font-size:.8em" ng-bind="SignupFormController.errorMessageEMail" ></span>
 		</div>
 		</md-input-container>
 	</div> 
@@ -41,15 +36,15 @@
 	<div layout="row">
 		<md-input-container class="md-block" flex-gt-xs="40">
 		<label>Name</label>
-		<input required name="firstName" ng-model="registerController.firstName">
-		<div ng-messages="registrationForm.name.$error">
+		<input required name="firstName" ng-model="SignupFormController.firstName">
+		<div ng-messages="signupForm.name.$error">
 			<div ng-message="required">Please provide your given name.</div>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-sm>
 		<label>Last Name</label>
-		<input required name="lastName" ng-model="registerController.lastName">
-		<div ng-messages="registrationForm.lastName.$error">
+		<input required name="lastName" ng-model="SignupFormController.lastName">
+		<div ng-messages="signupForm.lastName.$error">
 			<div ng-message="required">Please provide your last name.</div>
 		</div>
 		</md-input-container>
@@ -59,7 +54,7 @@
 	<div layout="row">
 		<md-input-container class="md-block" flex-gt-xs="100">
 		<label>Commpany</label>
-		<input name="company" ng-model="registerController.company">
+		<input name="company" ng-model="SignupFormController.company">
 		</md-input-container>
 	</div>      
 
@@ -68,84 +63,79 @@
 	<div layout-gt-sm="row">
 		<md-input-container class="md-block" flex-gt-xs="50">
 		<label>Address</label>
-		<input required name="address" ng-model="registerController.address">
-		<div ng-messages="registrationForm.address.$error">
+		<input required name="address" ng-model="SignupFormController.address">
+		<div ng-messages="signupForm.address.$error">
 			<div ng-message="required">Please provide a Street or Building.</div>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-xs="25">
 		<label>Number</label>
-		<input name="addressExt" ng-model="registerController.addressExt">  
-		<div ng-messages="registrationForm.lastName.$error">
+		<input name="addressExt" ng-model="SignupFormController.addressExt">  
+		<div ng-messages="signupForm.lastName.$error">
 			<div ng-message="required">Please provide a Street number or appartment.</div>
 		</div>
 		</md-input-container>
 				<md-input-container class="md-block" flex-gt-sm>
 		<label>Postal Code</label>
 		<input required type="number" name="postalCode" 
-			ng-model="registerController.postalCode" minlength="4" maxlength="5">
-		<div ng-messages="registrationForm.postalCode.$error" role="alert">
+			ng-model="SignupFormController.postalCode" minlength="4" maxlength="5">
+		<div ng-messages="signupForm.postalCode.$error" role="alert">
 			<div ng-message-exp="['required', 'minlength', 'maxlength']">Please provide a valid postal code.</div>
 		</div>
 		</md-input-container>
-
 	</div>
 <!-- 	Country  / State / city
  -->		
 	<div layout-gt-sm="row">
 		<md-input-container class="md-block" flex-gt-xs="50">
 			<label>Country</label>
-            <md-select required ng-model="registerController.userCountry" 
-            	ng-change="registerController.onCountryChange()">
-              <md-option ng-repeat="country in registerController.countries" value="{{country}}">
-                {{country}}
+            <md-select required ng-model="SignupFormController.country" 
+            	ng-change="SignupFormController.onCountryChange()">
+              <md-option ng-repeat="optCountry in SignupFormController.countries" value="{{optCountry}}">
+                {{optCountry}}
               </md-option>
             </md-select>
-		<div ng-messages="registrationForm.country.$error">
+		<div ng-messages="signupForm.country.$error">
 			<div ng-message="required">Please select the name of you country.</div>
 		</div>
 		</md-input-container>
 
 		<md-input-container class="md-block" flex-gt-xs="25">
             <label>State</label>
-            <md-select required ng-model="registerController.userState">
-              <md-option ng-repeat="optState in registerController.states" value="{{optState}}">
+            <md-select required ng-model="SignupFormController.countryState">
+              <md-option ng-repeat="optState in SignupFormController.states" value="{{optState}}">
                 {{optState}}
               </md-option>
             </md-select>
-		<div ng-messages="registrationForm.state.$error">
+		<div ng-messages="signupForm.state.$error">
 			<div ng-message="required">Please select the state in you country.</div>
 		</div>
+
         </md-input-container>
-        	<div layout-gt-sm="row">
 		<md-input-container class="md-block" flex-gt-sm>
 		<label>City</label>
-		<input required name="city" ng-model="registerController.city">
-		<div ng-messages="registrationForm.city.$error">
+		<input required name="city" ng-model="SignupFormController.city">
+		<div ng-messages="signupForm.city.$error">
 			<div ng-message="required">Please provide the name of you city.</div>
 		</div>
 		</md-input-container>
-	</div>
-	</div>
-<!-- 	Address / StreetNo
- -->	
-
+    </div>
 <!-- 	Password / Confirm PWD
  -->	
 	<div layout-gt-sm="row">
 		<md-input-container class="md-block" flex-gt-xs="70">
 		<label>Password</label>
-		<input required type="password" name="password" ng-model="registerController.password">
-		<div ng-messages="registrationForm.pwd.$error">
+		<input required type="password" name="password" ng-model="SignupFormController.password">
+		<div ng-messages="signupForm.pwd.$error">
 			<div ng-message="required">Please choose a password.</div>
 		</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex-gt-xs="70">
 		<label>Confirm Password</label>
-		<input required type="password" name="confirmPwd" ng-model="registerController.confirmPwd">
-		<div ng-messages="registrationForm.confirmPwd.$error">
+		<input required type="password" name="confirmPwd" ng-model="SignupFormController.confirmPwd">
+		<div ng-messages="signupForm.confirmPwd.$error">
 			<div ng-message="required">Please confirm your password.</div>
-			<span id="invalid-pwd" style="font-size:.8em" ng-bind="registerController.errorMessagePwd" ></span>
+			<span id="invalid-pwd" style="font-size:.8em" ng-bind="SignupFormController.errorMessagePwd" ></span>
 		</div>
 		</md-input-container>
 	</div>
@@ -157,7 +147,5 @@
 
 	</form>
 	
-			        </md-card-content>
-		</md-card>
-	</div>
-</div>
+</md-card-content>
+</md-card>
