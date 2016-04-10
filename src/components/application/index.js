@@ -7,6 +7,7 @@ import ocLazyLoad from 'oclazyload';
 import ngLazy from 'angular-lazy';
 import 'angular-translate';
 import translationsModule from './i18n/translations';
+import interceptorModule from './interceptor/interceptor';
 import defaultLocaleConfig from './config/default-locale';
 import routingConfig from './config/routing';
 import errorHandlingConfig from './config/error-handling';
@@ -25,6 +26,7 @@ const dependencies = [
     ngLazy.name,
     'pascalprecht.translate',
     translationsModule.name,
+    interceptorModule.name,
     'ngMaterial',
     commonModule.name
 ];

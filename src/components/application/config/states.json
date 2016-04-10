@@ -27,7 +27,8 @@
     "name": "app.service",
     "url": "service",
     "type": "load",
-    "src": "components/service-state/index"
+    "src": "components/service-state/index",
+    "authorize" : "true"
   },
   {
     "name": "app.firmware",

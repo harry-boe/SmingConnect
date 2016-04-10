@@ -5,11 +5,14 @@ class UserStateController {
     	this.userService = userService;
     	this.state = $state;
     	this.scope = $scope;
-    	this.mdDialog = $mdDialog;
-    	this.showDialog();
+
+      if (userService.isLoggedIn() == false) {
+         this.mdDialog = $mdDialog;
+         this.showDialog();        
+      }
 	}
 
-    showDialog() {
+  showDialog() {
 	   console.log("UserStateController showDialog($event)");
        var parentEl = angular.element(document.body);
        this.mdDialog.show({
@@ -17,12 +20,12 @@ class UserStateController {
 //         targetEvent: $event,
          template: '<login-form></login-form>'
       });
-   }
+  }
 
-   isNotLoggedIn() {
-      console.log("check for login");
-      return true;
-   }
+  isLoggedIn() {
+       console.log("check for login");
+       return this.userService.isLoggedIn();
+  }
 
 }
 
@@ -31,5 +34,5 @@ export default [
 	'$state',
 	'$scope',
 	'$mdDialog',
-    UserStateController
+  UserStateController
 ];
