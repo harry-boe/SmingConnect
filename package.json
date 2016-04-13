@@ -80,7 +80,9 @@
     "build": "gulp build",
     "dist": "gulp dist",
     "test": "gulp test",
-    "test-e2e": "gulp test-e2e"
+    "test-e2e": "gulp test-e2e",
+    "eslint": "eslint .",
+    "run": "gulp"
   },
   "engines": {
     "node": ">=4.2.0",
