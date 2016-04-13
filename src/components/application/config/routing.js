@@ -6,7 +6,7 @@ function routingConfig($locationProvider, $urlRouterProvider, $httpProvider, $fu
     $locationProvider.html5Mode(false);
     $urlRouterProvider.otherwise('/index');
     $urlRouterProvider.when('/', '/index');
-    
+
     $urlRouterProvider.rule(function ($injector, $location) {
         var path = $location.path();
         console.log("Find protected states");
@@ -21,11 +21,9 @@ function routingConfig($locationProvider, $urlRouterProvider, $httpProvider, $fu
         if (result.length > 0) {
             console.log("Login rquired for" + path);
             var userService = $injector.get('userService');
-            if (userService.isLoggedIn() == false) {
-                return "/user";                
-            } else {
-                console.log("User alreadylogged in");
-            }
+            if (userService.handleLogin()) {
+                return $location.path();
+            };
         } 
     });
 }

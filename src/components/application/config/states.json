@@ -34,12 +34,14 @@
     "name": "app.firmware",
     "url": "firmware",
     "type": "load",
-    "src": "components/firmware-state/index"
+    "src": "components/firmware-state/index",
+    "authorize" : "true"
   },
   {
     "name": "app.ca",
     "url": "ca",
     "type": "load",
-    "src": "components/ca-state/index"
+    "src": "components/ca-state/index",
+    "authorize" : "true"
   }
 ]

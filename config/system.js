@@ -19,6 +19,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.5.2",
     "angular-file-upload": "github:danialfarid/ng-file-upload-bower@12.0.4",
     "angular-lazy": "github:matoilic/angular-lazy@0.2.2",
+    "angular-local-storage": "npm:angular-local-storage@0.2.7",
     "angular-material": "github:angular/bower-material@1.0.6",
     "angular-messages": "github:angular/bower-angular-messages@1.5.2",
     "angular-mocks": "github:angular/bower-angular-mocks@1.5.2",

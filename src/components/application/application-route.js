@@ -7,10 +7,16 @@ function applicationRouteConfig($stateProvider) {
             abstract: true,
             views: {
                 page: {
-                    controller: 'ApplicationController as application',
-                    template
+                    template: template,
+                    controller: 'ApplicationController as appController'
                 }
             }
+            // ,
+            // resolve: {
+            //     isAuthenticated: ['authenticationService', function(authenticationService) {
+            //         return authenticationService.verifyAuthentication();
+            //     }]
+            // }
         });
 }
 

@@ -1,22 +1,45 @@
 class UserService {
 
-	constructor($rootScope, $q, $http, apiiUrl) {
+	constructor(localStorageService, $q, $http, apiiUrl, $mdDialog) {
           console.log("call UserService constructor");
-          this.rootScope = $rootScope
+          this.localStorageService = localStorageService;
 		this.$http = $http;
 		this.apiiUrl = apiiUrl;
           this.$q = $q;
+          this.mdDialog = $mdDialog;
+
+
+          var storageType = localStorageService.getStorageType(); //e.g localStorage
+          console.log("Local Storage Type :" + storageType);
           // create user variable
 //          var user = $rootScope.user;;
 	}
 
+     isAuthenticated() {
+        return this.localStorageService.get('user');
+     }
+
+
      isLoggedIn() {
-          console.log("isLoggedIn = " + this.rootScope.user);
-          if(this.rootScope.user) {
-          return true;
+          var user = this.localStorageService.get('user');
+          console.log("isLoggedIn = " + user);
+
+          if(user != 'undefined' && this.localStorageService.get('user')) {
+               return true;
           } else {
-          return false;
+               return false;
           }
+     }
+
+     handleLogin() {
+          console.log("Handle login()");
+          if (this.isAuthenticated()) return true;
+          var parentEl = angular.element(document.body);
+          this.mdDialog.show({
+               parent: parentEl,
+               template: '<login-form></login-form>'
+          });
+          return this.isAuthenticated();
      }
 
      login(username, password) {
@@ -30,11 +53,13 @@ class UserService {
                }).then((loginSuccees) => {
                     console.log("login success set user");
                //     this.user = true;
-                    this.rootScope.user = true;
+                    this.localStorageService.set('user', true);
+//                    this.user = true;
                     deferred.resolve();
                }, (loginError) => {
                     console.log("login error clear user");
-                    this.rootScope.user = false;
+                    this.localStorageService.set('user', false);
+//                    this.user = false;
 //                    this.user = false;
                     deferred.reject();
                });
@@ -66,9 +91,10 @@ class UserService {
 
 
  export default [
- '$rootScope',
+ 'localStorageService',
  '$q',
  '$http',
  'apiUserUrl',
+ '$mdDialog',
  UserService
  ];

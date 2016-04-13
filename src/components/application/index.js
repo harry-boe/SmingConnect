@@ -3,7 +3,7 @@ import 'babel/external-helpers';
 import angular from 'angular';
 import 'angular-ui-router';
 import 'ui-router-extras';
-import ocLazyLoad from 'oclazyload';
+import 'oclazyload';
 import ngLazy from 'angular-lazy';
 import 'angular-translate';
 import translationsModule from './i18n/translations';
@@ -16,11 +16,12 @@ import ApplicationController from './application-controller';
 import applicationRoute from './application-route';
 import 'angular-material';
 import commonModule from 'components/common/index';
+import 'angular-local-storage';
 
 
 const dependencies = [
     'ui.router',
-    ocLazyLoad,
+    'oc.lazyLoad',
     'ct.ui.router.extras',
     'ct.ui.router.extras.future',
     ngLazy.name,
@@ -28,6 +29,7 @@ const dependencies = [
     translationsModule.name,
     interceptorModule.name,
     'ngMaterial',
+    'LocalStorageModule',
     commonModule.name
 ];
 

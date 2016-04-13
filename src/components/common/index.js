@@ -11,7 +11,6 @@ const dependencies = [
 export default angular
     .module('common', dependencies)
     .service('userService', UserService)
-    .service('authService', AuthService)
     .service('appServiceService', ApplicationServiceService)
     .service('imageService', ImageService);
 
